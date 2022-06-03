@@ -1,20 +1,79 @@
-<form>
+<!-- <div>
+<div class="submit-form">
     <div class="form-group">
+        <div *ngIf="!submitted">
         <label for="SellerName">Seller Name: </label>
-        <input type="text" class="form-control" id="seller_name" placeholder="Enter Your name">
+        <input type="text" class="form-control" id="seller_name" [(ngModel)]="seller.s_name" name="s_name" placeholder="Enter Your name">
     </div>
     <div class="form-group">
         <label for="SellerMobileNo">Seller Mobile no: </label>
-        <input type="text" class="form-control" id="seller_mobile_no" placeholder="Enter Your phone no.">
+        <input type="text" class="form-control" id="seller_mobile_no" [(ngModel)]="seller.s_mobile_no" name="s_mobile_no" placeholder="Enter Your phone no.">
     </div>
     <div class="form-group">
       <label for="exampleInputEmail1">Email address</label>
-      <input type="email" class="form-control" id="seller_email_id" aria-describedby="emailHelp" placeholder="Enter email">
+      <input type="email" class="form-control" id="seller_email_id" [(ngModel)]="seller.s_email_id" name="s_email_id" aria-describedby="emailHelp" placeholder="Enter email">
       <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
     </div>
     <div class="form-group">
         <label for="Address">Seller Address</label>
-        <textarea class="form-control" id="seller_address" rows="3"></textarea>
+        <textarea class="form-control" id="seller_address" [(ngModel)]="seller.s_address" name="s_address" rows="3"></textarea>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
+    <div>
+        
+        <button type="submit" class="btn btn-primary" (click)="saveSeller()">Submit</button>
+    </div>    
+    </div>
+    <div *ngIf="submitted">
+        <h4>You Have Successfully logged In</h4>
+        
+        <button class="btn btn-success" >Add Product</button>
+    </div>
+</div>
+</div> -->
+
+<div class="modal" tabindex="-1" lass="modal fade" id="exampleModal1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Add Seller</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="submit-form">
+                <div class="form-group">
+                    <div *ngIf="!submitted">
+                    <label for="SellerName">Seller Name: </label>
+                    <input type="text" class="form-control" id="seller_name" [(ngModel)]="seller.s_name" name="s_name" placeholder="Enter Your name">
+                </div>
+                <div class="form-group">
+                    <label for="SellerMobileNo">Seller Mobile no: </label>
+                    <input type="text" class="form-control" id="seller_mobile_no" [(ngModel)]="seller.s_mobile_no" name="s_mobile_no" placeholder="Enter Your phone no.">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input type="email" class="form-control" id="seller_email_id" [(ngModel)]="seller.s_email_id" name="s_email_id" aria-describedby="emailHelp" placeholder="Enter email">
+                  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+                <div class="form-group">
+                    <label for="Address">Seller Address</label>
+                    <textarea class="form-control" id="seller_address" [(ngModel)]="seller.s_address" name="s_address" rows="3"></textarea>
+                </div>
+                <div>
+                    
+                    <button type="submit" class="btn btn-primary" (click)="saveSeller()">Submit</button>
+                </div>    
+                </div>
+                <div *ngIf="submitted">
+                    <button class="btn btn-success" (click) = "resetSeller()" >reset</button>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+

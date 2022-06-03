@@ -6,7 +6,7 @@ import { SellerComponent } from './component/seller/seller.component';
 
 const routes: Routes = [
   {path:'seller', component:SellerComponent},
-  {path:'',redirectTo:'product',pathMatch:'full'},
+  {path:'',redirectTo:'header',pathMatch:'full'},
   {path:'product', component:ProductComponent},
   {path:'cart', component:CartComponent}
 ];

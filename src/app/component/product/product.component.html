@@ -1,40 +1,93 @@
-<div class="cart-top containerfluid">
-    <div class="container d-flex">
-        <div class="items">
-            <a>
-                <img src="https://rukminim1.flixcart.com/flap/128/128/image/f15c02bfeb02d15d.png?q=100">
-            </a>
+<!-- <div>
+    <div class="submit-form">
+        <div class="form-group">
+            <div *ngIf="!submitted">
+            <label for="ProductName">Product Name: </label>
+            <input type="text" class="form-control" id="product_name" [(ngModel)]="product.p_name" name="s_name" placeholder="Enter Your Product name">
         </div>
-        <div class="items">
-            <a>
-                <img src="https://rukminim1.flixcart.com/flap/128/128/image/f15c02bfeb02d15d.png?q=100" >
-            </a>
+        <div class="form-group">
+            <label for="ProductCategory">Product Category: </label>
+            <input type="text" class="form-control" id="product_category" [(ngModel)]="product.p_category" name="p_category" >
         </div>
-        <div class="items">
-            <a>
-                <img src="https://rukminim1.flixcart.com/flap/128/128/image/f15c02bfeb02d15d.png?q=100" >
-            </a>
+        <div class="form-group">
+          <label for="ProductBrand">Product Brand</label>
+          <input type="text" class="form-control" id="product_brand" [(ngModel)]="product.p_brand" name="p_brand">
         </div>
-        <div class="items">
-            <a>
-                <img src="https://rukminim1.flixcart.com/flap/128/128/image/f15c02bfeb02d15d.png?q=100" >
-            </a>
+        <div class="form-group">
+            <label for="ProductPrice">Product Price: </label>
+            <input type="text" class="form-control" id="product_price" [(ngModel)]="product.p_price" name="p_price" >
+        </div>
+        <div class="form-group">
+            <label for="ProductQuantity">Product Quantity: </label>
+            <input type="text" class="form-control" id="product_quantity" [(ngModel)]="product.p_quantity" name="p_quantity" >
+        </div>
+        <div class="form-group">
+            <label for="ProductDescription">Product Description</label>
+            <textarea class="form-control" id="product_description" [(ngModel)]="product.p_description" name="p_description" rows="3"></textarea>
+        </div>
+        <div>
+            
+            <button type="submit" class="btn btn-primary" (click)="addProduct()">Submit</button>
+        </div>    
+        </div>
+        <div *ngIf="submitted">
+            <h4>You Have Successfully Add Your Product</h4>
+            
+            <button class="btn btn-success" (click)="newProduct()">Add Product</button>
         </div>
     </div>
-</div>
+    </div> -->
+    <!-- Button trigger modal -->
 
-<div class="container">
-    <div class="row">
-        <ng-container *ngFor="let item of productList">
-            <div class="card col-md-3">
-                <img src="{{item.image}}" alt="">
-                <h5 class="itemdata">{{item.title}}</h5> 
-                <p class="itemdata">{{item.description}}</p>
-                <p><strong>Price:</strong>${{item.price}}</p>
-                <p>{{item.category}}</p>
-                
-                <button class="btn btn-primary" (click)="addtoCart(item)">Add to cart</button>
+    <div class="modal" tabindex="-1" lass="modal fade" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Add Product</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-        </ng-container>
-    </div>
-</div>
+            <div class="modal-body">
+                <div class="submit-form">
+                    <div class="form-group">
+                        <div *ngIf="!submitted">
+                        <label for="ProductName">Product Name: </label>
+                        <input type="text" class="form-control" id="product_name" [(ngModel)]="product.p_name" name="s_name" placeholder="Enter Your Product name">
+                    </div>
+                    <div class="form-group">
+                        <label for="ProductCategory">Product Category: </label>
+                        <input type="text" class="form-control" id="product_category" [(ngModel)]="product.p_category" name="p_category" >
+                    </div>
+                    <div class="form-group">
+                      <label for="ProductBrand">Product Brand</label>
+                      <input type="text" class="form-control" id="product_brand" [(ngModel)]="product.p_brand" name="p_brand">
+                    </div>
+                    <div class="form-group">
+                        <label for="ProductPrice">Product Price: </label>
+                        <input type="text" class="form-control" id="product_price" [(ngModel)]="product.p_price" name="p_price" >
+                    </div>
+                    <div class="form-group">
+                        <label for="ProductQuantity">Product Quantity: </label>
+                        <input type="text" class="form-control" id="product_quantity" [(ngModel)]="product.p_quantity" name="p_quantity" >
+                    </div>
+                    <div class="form-group">
+                        <label for="ProductDescription">Product Description</label>
+                        <textarea class="form-control" id="product_description" [(ngModel)]="product.p_description" name="p_description" rows="3"></textarea>
+                    </div>
+                    <div>
+                        
+                        <button type="submit" class="btn btn-primary" (click)="addProduct()">Submit</button>
+                    </div>    
+                    </div>
+                    <div *ngIf="submitted">
+                        <h4>You Have Successfully Add Your Product</h4>
+                        
+                        <button class="btn btn-success" (click)="newProduct()">Add Product</button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
